@@ -62,14 +62,14 @@ const updateUI = async (flag) => {
     if(flag===1){
         const getWeatherData = await fetch('/getWeather');
         const weatherData = await getWeatherData.json();
-        document.querySelector('#date').textContent =`Today is: ${weatherData.theDate}`;
-        document.querySelector('#temp').textContent =`Temperature is: ${weatherData.temp} at: ${weatherData.country}`;
-        document.querySelector('#content').textContent =`I'm Feeling: ${weatherData.content}`;
+        document.querySelector('#date').innerHTML =`Today is: ${weatherData.theDate}`;
+        document.querySelector('#temp').innerHTML =`Temperature is: ${weatherData.temp} at: ${weatherData.country}`;
+        document.querySelector('#content').innerHTML =`I'm Feeling: ${weatherData.content}`;
     }
     else{
-        document.querySelector('#date').textContent =``;
-        document.querySelector('#temp').textContent =``;
-        document.querySelector('#content').textContent =`Sorry but you entered an invalid Zipcode\n\nHave another try!`;
+        document.querySelector('#date').innerHTML =``;
+        document.querySelector('#temp').innerHTML =``;
+        document.querySelector('#content').innerHTML =`Sorry but you entered an invalid Zipcode\n\nHave another try!`;
     }
     
     
